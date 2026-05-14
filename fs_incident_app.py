@@ -470,7 +470,7 @@ class App(tk.Tk):
 
     # ── FORM BUILD ────────────────────────────────────────────────────────────
     def _build_form(self, f):
-        pad = {"fill": "x", "pady": (0, 0)}
+        pad = {"fill": "x"}
 
         def card():
             c = tk.Frame(f, bg=CARD)
@@ -531,7 +531,7 @@ class App(tk.Tk):
             self._fields[key] = og
 
         # ── 1. IDENTIFICATION ─────────────────────────────────────────────────
-        sec_hdr(f, "1.  IDENTIFICATION").pack(**pad)
+        sec_hdr(f, "1.  IDENTIFICATION").pack(**pad, pady=(0, 0))
         c = card()
 
         # 2×2 quad
