@@ -243,12 +243,10 @@ class SignalTable(tk.Frame):
         self._body.pack(fill="x")
         btn_row = tk.Frame(self, bg=CARD, pady=4)
         btn_row.pack(fill="x")
-        tk.Label(btn_row, text="+ Add Row", bg=CARD, fg=PRIMARY,
-                 font=fnt(10, "bold"), cursor="hand2", padx=10
-                 ).pack(side="left").bind("<Button-1>", lambda e: self._add_row())
-        # make label clickable without separate bind call
-        for w in btn_row.winfo_children():
-            w.bind("<Button-1>", lambda e: self._add_row())
+        add_lbl = tk.Label(btn_row, text="+ Add Row", bg=CARD, fg=PRIMARY,
+                           font=fnt(10, "bold"), cursor="hand2", padx=10)
+        add_lbl.pack(side="left")
+        add_lbl.bind("<Button-1>", lambda e: self._add_row())
         self._add_row()
 
     def _add_row(self, prefill=None):
