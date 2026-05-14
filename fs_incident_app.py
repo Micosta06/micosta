@@ -190,7 +190,7 @@ class OptionGroup(tk.Frame):
     def __init__(self, parent, options, multi=True, cols=3, **kw):
         super().__init__(parent, bg=CARD, **kw)
         self._multi   = multi
-        self._options = options
+        self._opts    = options
         if multi:
             self._vars = {o: tk.BooleanVar() for o in options}
             for i, opt in enumerate(options):
